@@ -3,6 +3,7 @@ namespace Histogram.Core.Services
 {
     using DataGenerator;
     using Histogram.Core.Data;
+    using Histogram.Core.Providers;
     using System;
     using System.Collections.Generic;
     using System.Linq;
@@ -15,12 +16,6 @@ namespace Histogram.Core.Services
         private IBinProvider _binProvider;
         private IReadOnlyCollection<HistogramEntry> _histogramEntries;
 
-        private DateTime? _startDate;
-        public DateTime? StartDate => _startDate ?? (_startDate = _histogramEntries.Min(entry => entry.OccurrenceDate));
-
-        private DateTime? _endDate;
-        public DateTime? EndDate => _endDate ?? (_endDate = _histogramEntries.Max(entry => entry.OccurrenceDate));
-
         public HistogramService(IBinProvider binProvider)
         {
             Init(binProvider);
@@ -29,7 +24,7 @@ namespace Histogram.Core.Services
         public IReadOnlyCollection<IChartData<int>> ProvideChartData(DateTime startDate, DateTime endDate, int countOfBins)
         {
             if (startDate >= endDate) throw new ArgumentException();
-            if (startDate < _startDate || endDate > _endDate) throw new ArgumentException();
+            _histogramEntries = HistogramDataGenerator.GetRandomHistogramData();
             var bins = _binProvider.CreateBins(LowerBound, UpperBound, countOfBins);
             List<IChartData<int>> chartDataList = CreateEmptyChartDataList();
             var filteredHistogramEntries = FilterHistogramEntries(startDate, endDate);
@@ -40,7 +35,6 @@ namespace Histogram.Core.Services
         private void Init(IBinProvider binProvider)
         {
             _binProvider = binProvider;
-            _histogramEntries = HistogramDataGenerator.GetRandomHistogramData();
         }
 
         private List<IChartData<int>> CreateEmptyChartDataList() =>

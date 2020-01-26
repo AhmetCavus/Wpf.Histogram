@@ -1,8 +1,9 @@
 ﻿namespace Histogram.Unittest.HistogramCore
 {
-    using Histogram.Core.Poviders;
+    using Histogram.Core.Providers;
     using Histogram.Core.Services;
     using NUnit.Framework;
+    using System;
     using System.Linq;
     public class HistogramServiceTest
     {
@@ -23,11 +24,26 @@
             var sut = new HistogramService(new BinProvider());
 
             // Act
-            var results = sut.ProvideChartData(sut.StartDate.Value, sut.EndDate.Value, countOfBins);
+            var results = sut.ProvideChartData(DateTime.Now.AddYears(-1), DateTime.Now, countOfBins);
             var totalCount = results.Sum(result => result.Data);
 
             // Assert
             Assert.IsTrue(totalCount == CuntOfGeneratedNumbers);
+        }
+
+        [Test]
+        public void HistogramService_ProvideChartData_ReturnIReadOnlyCollection_ThrowsArgumentException()
+        {
+            // Arrange
+            const int CuntOfGeneratedNumbers = 3000;
+            var sut = new HistogramService(new BinProvider());
+
+            // Assert
+            Assert.Throws<ArgumentException>(() =>
+            {
+                // Act
+                sut.ProvideChartData(DateTime.Now, DateTime.Now.AddSeconds(-1), countOfBins: 4);
+            });
         }
     }
 }

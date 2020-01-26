@@ -1,5 +1,4 @@
-﻿
-namespace Histogram.Core.Poviders
+﻿namespace Histogram.Core.Providers
 {
     using Histogram.Core.Data;
     using System;
@@ -16,7 +15,7 @@ namespace Histogram.Core.Poviders
             if (countOfBins > totalInterval) throw new ArgumentException("Invalid parameter: The bin count cannot exceed the total interval");
 
             var binRange = totalInterval / countOfBins;
-            var binDataList = CreateBinDataList();
+            var binDataList = CreateEmptyBinDataList();
 
             int stepToNextBin = 0;
             for (int index = rangeStart; index < rangeEnd; index += binRange)
@@ -39,7 +38,7 @@ namespace Histogram.Core.Poviders
         private int CalculateTotalInterval(int rangeStart, int rangeEnd) =>
             Math.Abs(rangeStart - rangeEnd);
 
-        private List<IBinData> CreateBinDataList() => new List<IBinData>();
+        private List<IBinData> CreateEmptyBinDataList() => new List<IBinData>();
 
         private bool IsExceeding(float nextUpperBound, float rangeEnd) => nextUpperBound > rangeEnd;
 

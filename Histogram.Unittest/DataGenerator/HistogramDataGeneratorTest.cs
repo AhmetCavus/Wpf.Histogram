@@ -3,7 +3,6 @@ namespace Histogram.Unittest.DataGenerator
 {
     using global::DataGenerator;
     using NUnit.Framework;
-    using System;
 
     class HistogramDataGeneratorTest
     {

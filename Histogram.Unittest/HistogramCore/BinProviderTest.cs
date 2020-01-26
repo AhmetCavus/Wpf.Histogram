@@ -1,7 +1,7 @@
 ﻿namespace Histogram.Unittest.HistogramCore
 {
     using Histogram.Core.Data;
-    using Histogram.Core.Poviders;
+    using Histogram.Core.Providers;
     using NUnit.Framework;
     using System;
 
@@ -82,11 +82,10 @@
             // Arrange
             var sut = new BinProvider();
 
-            // Act
-
             // Assert
             Assert.Throws<ArgumentException>(() =>
             {
+                // Act
                 sut.CreateBins(rangeStart, rangeEnd, countOfBins);
             });          
         }
