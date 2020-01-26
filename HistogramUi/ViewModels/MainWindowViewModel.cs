@@ -10,9 +10,18 @@
     using System.Linq;
     using System.Windows;
 
+    /// <summary>
+    /// The Main ViewModel is the central ViewModel of the App.
+    /// </summary>
     public class MainWindowViewModel : BindableBase
     {
+        #region Attributes
+
         private IHistogramService _histogramService;
+
+        #endregion
+
+        #region Properties
 
         private string _title = Resources.Lang.AppTitle;
         public string Title
@@ -58,18 +67,34 @@
 
         public Func<int, string> Formatter { get; set; }
 
+        #endregion
+
+        #region Commands
+
         public DelegateCommand CalculateHistogramCommand { get; private set; }
+
+        #endregion
+
+        #region Constructor
 
         public MainWindowViewModel(IHistogramService histogramService)
         {
             Init(histogramService);
         }
 
+        #endregion
+
+        #region Methods
+
         private void Init(IHistogramService histogramService)
         {
             _histogramService = histogramService;
             CalculateHistogramCommand = new DelegateCommand(OnCalculateHistogram);
         }
+
+        #endregion
+
+        #region Event Handler
 
         private void OnCalculateHistogram()
         {
@@ -95,5 +120,7 @@
                 throw ex;
             }
         }
+
+        #endregion
     }
 }

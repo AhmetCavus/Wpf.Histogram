@@ -126,4 +126,13 @@
   <data name="Calculate" xml:space="preserve">
     <value>Calculate</value>
   </data>
+  <data name="FromDate" xml:space="preserve">
+    <value>From</value>
+  </data>
+  <data name="NumberOfBins" xml:space="preserve">
+    <value>Number of bins</value>
+  </data>
+  <data name="ToDate" xml:space="preserve">
+    <value>To</value>
+  </data>
 </root>

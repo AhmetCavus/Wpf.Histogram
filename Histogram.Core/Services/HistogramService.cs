@@ -10,20 +10,34 @@ namespace Histogram.Core.Services
 
     public class HistogramService : IHistogramService
     {
+        #region Const
+
         private const int LowerBound = -1000;
         private const int UpperBound = 1000;
 
+        #endregion
+
+        #region Attributes
+
         private IBinProvider _binProvider;
         private IReadOnlyCollection<HistogramEntry> _histogramEntries;
+
+        #endregion
+
+        #region Constructor
 
         public HistogramService(IBinProvider binProvider)
         {
             Init(binProvider);
         }
 
+        #endregion
+
+        #region Methods
+
         public IReadOnlyCollection<IChartData<int>> ProvideChartData(DateTime startDate, DateTime endDate, int countOfBins)
         {
-            if (startDate >= endDate) throw new ArgumentException();
+            if (startDate >= endDate) throw new ArgumentException("The start date cannot be greater than the end date");
             _histogramEntries = HistogramDataGenerator.GetRandomHistogramData();
             var bins = _binProvider.CreateBins(LowerBound, UpperBound, countOfBins);
             List<IChartData<int>> chartDataList = CreateEmptyChartDataList();
@@ -51,5 +65,7 @@ namespace Histogram.Core.Services
                 chartDataList.Add(new ChartData<int>(label: $"[{bin.Range.Start} - {bin.Range.End}]", data: bin.Count));
             }
         }
+
+        #endregion
     }
 }

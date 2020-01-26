@@ -22,7 +22,7 @@ namespace HistogramUi.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Lang {
+    public class Lang {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace HistogramUi.Resources {
         ///   Gibt die zwischengespeicherte ResourceManager-Instanz zurück, die von dieser Klasse verwendet wird.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("HistogramUi.Resources.Lang", typeof(Lang).Assembly);
@@ -51,7 +51,7 @@ namespace HistogramUi.Resources {
         ///   Ressourcenzuordnungen, die diese stark typisierte Ressourcenklasse verwenden.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace HistogramUi.Resources {
         /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Histogram ähnelt.
         /// </summary>
-        internal static string AppTitle {
+        public static string AppTitle {
             get {
                 return ResourceManager.GetString("AppTitle", resourceCulture);
             }
@@ -72,7 +72,7 @@ namespace HistogramUi.Resources {
         /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die You have not passed valid parameters ähnelt.
         /// </summary>
-        internal static string ArgumentExceptionError {
+        public static string ArgumentExceptionError {
             get {
                 return ResourceManager.GetString("ArgumentExceptionError", resourceCulture);
             }
@@ -81,9 +81,36 @@ namespace HistogramUi.Resources {
         /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Calculate ähnelt.
         /// </summary>
-        internal static string Calculate {
+        public static string Calculate {
             get {
                 return ResourceManager.GetString("Calculate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die From ähnelt.
+        /// </summary>
+        public static string FromDate {
+            get {
+                return ResourceManager.GetString("FromDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Number of bins ähnelt.
+        /// </summary>
+        public static string NumberOfBins {
+            get {
+                return ResourceManager.GetString("NumberOfBins", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die To ähnelt.
+        /// </summary>
+        public static string ToDate {
+            get {
+                return ResourceManager.GetString("ToDate", resourceCulture);
             }
         }
     }

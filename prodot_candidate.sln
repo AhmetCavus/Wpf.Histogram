@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataGenerator", "DataGenera
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Histogram.Unittest", "Histogram.Unittest\Histogram.Unittest.csproj", "{4EE8807A-BDD5-42A5-9F2A-CC142FD1556E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Histogram.Core", "Histogram.DataService\Histogram.Core.csproj", "{700B46CF-EDD2-47AD-81B9-008F1421EDB7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Histogram.Core", "Histogram.Core\Histogram.Core.csproj", "{700B46CF-EDD2-47AD-81B9-008F1421EDB7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -14,7 +14,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DataGenerator\DataGenerator.csproj" />
-    <ProjectReference Include="..\Histogram.DataService\Histogram.Core.csproj" />
     <ProjectReference Include="..\HistogramUi\HistogramUi.csproj" />
   </ItemGroup>
 

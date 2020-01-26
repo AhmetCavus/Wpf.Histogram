@@ -9,12 +9,13 @@
         xmlns:res="clr-namespace:HistogramUi.Resources"
         xmlns:prism="http://prismlibrary.com/"
         ResizeMode="NoResize"
-        Title="{Binding Title}" Height="550" Width="800">
+        Title="{x:Static res:Lang.AppTitle}" Height="550" Width="800">
     <WrapPanel>
+        <TextBlock Margin="11, 0" Text="{x:Static res:Lang.NumberOfBins}" />
         <DockPanel 
             Width="762"
             VerticalAlignment="Center" 
-            Margin="11">
+            Margin="11, 0">
             <TextBox 
                 Text="{Binding ElementName=slValue, Path=Value, UpdateSourceTrigger=PropertyChanged}" 
                 DockPanel.Dock="Right" 
@@ -28,22 +29,30 @@
                 Name="slValue" 
                 Value="{Binding NumberOfBins}" />
         </DockPanel>
+        <TextBlock 
+            Text="{x:Static res:Lang.FromDate}" 
+            Margin="11, 0" 
+            Width="370" />
+        <TextBlock 
+            Text="{x:Static res:Lang.ToDate}" 
+            Margin="11, 0" 
+            Width="370" />
         <DatePicker
-            Margin="11"
+            Margin="11, 0"
             VerticalAlignment="Top"
             SelectedDate="{Binding StartDate}"
             Width="370" 
             Height="31" />
         <DatePicker 
-            Margin="11"
+            Margin="11, 0"
             VerticalAlignment="Top"
             SelectedDate="{Binding EndDate}"
             Width="370" 
             Height="31" />
         <Button 
             Width="762"
-            Margin="11, 0"
-            Content="Calculate"
+            Margin="11"
+            Content="{x:Static res:Lang.Calculate}"
             Command="{Binding CalculateHistogramCommand}" />
         <lvc:CartesianChart 
             Margin="11"

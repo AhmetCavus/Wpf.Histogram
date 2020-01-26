@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace HistogramUi.Service
+﻿namespace HistogramUi.Service
 {
+    /// <summary>
+    /// A service for controlling the chart views
+    /// </summary>
     public interface IChartService
     {
     }
