@@ -5,7 +5,7 @@
         public IInterval Range { get; }
         public int Count { get; set; }
 
-        public BinData(int lowerBound, int upperBound)
+        public BinData(double lowerBound, double upperBound)
         {
             Range = new Interval(lowerBound, upperBound);
         }

@@ -34,8 +34,6 @@
         [Test]
         public void HistogramService_ProvideChartData_ReturnIReadOnlyCollection_ThrowsArgumentException()
         {
-            // Arrange
-            const int CuntOfGeneratedNumbers = 3000;
             var sut = new HistogramService(new BinProvider());
 
             // Assert

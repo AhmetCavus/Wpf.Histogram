@@ -2,10 +2,10 @@
 {
     public class Interval : IInterval
     {
-        public int Start { get; }
-        public int End { get; }
+        public double Start { get; }
+        public double End { get; }
 
-        public Interval(int start, int end)
+        public Interval(double start, double end)
         {
             Start = start;
             End = end;

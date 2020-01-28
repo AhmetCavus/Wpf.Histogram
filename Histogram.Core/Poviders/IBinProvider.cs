@@ -15,6 +15,6 @@
         /// <param name="rangeEnd">The end of the range</param>
         /// <param name="countOfBins">The total number of bins</param>
         /// <returns></returns>
-        IReadOnlyList<IBinData> CreateBins(int rangeStart, int rangeEnd, int countOfBins);
+        IReadOnlyList<IBinData> CreateBins(double rangeStart, double rangeEnd, int countOfBins);
     }
 }

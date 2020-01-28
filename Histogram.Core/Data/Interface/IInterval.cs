@@ -8,11 +8,11 @@
         /// <summary>
         /// The start of the range
         /// </summary>
-        int Start { get; }
-        
+        double Start { get; }
+
         /// <summary>
         /// The end of the range 
         /// </summary>
-        int End { get; }
+        double End { get; }
     }
 }
